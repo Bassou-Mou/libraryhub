@@ -1,0 +1,48 @@
+### Créer un nouveau livre
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Spring Boot in Action",
+  "author": "Craig Walls",
+  "isbn": "978-1-61729-254-5",
+  "description": "Apprendre Spring Boot par la pratique",
+  "totalCopies": 2,
+  "categoryId": null
+}
+### 1. Liste tous les livres (doit en retourner 4)
+GET http://localhost:8080/api/books
+
+###
+
+### 2. Recherche par titre
+GET http://localhost:8080/api/books?title=spring
+
+###
+
+### 3. Détail du livre 4
+GET http://localhost:8080/api/books/4
+
+###
+
+### 4. Modifier le livre 4
+PUT http://localhost:8080/api/books/4
+Content-Type: application/json
+
+{
+  "title": "Spring Boot in Action - 2nd Edition",
+  "author": "Craig Walls",
+  "description": "Version mise à jour",
+  "totalCopies": 5,
+  "categoryId": null
+}
+
+###
+
+### 5. Supprimer le livre 4
+DELETE http://localhost:8080/api/books/4
+
+###
+
+### 6. Vérifier que le livre 4 est supprimé (doit retourner 404)
+GET http://localhost:8080/api/books/4
