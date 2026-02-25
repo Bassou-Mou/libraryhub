@@ -1,4 +1,4 @@
-package com.library.libraryhub.dto.request;
+package com.library.libraryhub.dto.response;
 import lombok.*;
 
 @Data
