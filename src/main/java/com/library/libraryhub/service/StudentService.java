@@ -66,9 +66,13 @@ public class StudentService {
     }
 
     private StudentResponse toResponse(Student student) {
+
         int activeBorrows = borrowRepository
-                .findByStudentIdAndStatus(BorrowStatus.ACTIVE, student.getId())
-                .size();
+                .findByStudentIdAndStatus(
+                        student.getId(),
+                        BorrowStatus.ACTIVE
+                ).size();
+
         int totalBorrows = borrowRepository
                 .findAllByStudentId(student.getId())
                 .size();

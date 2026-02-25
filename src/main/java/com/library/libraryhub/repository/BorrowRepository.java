@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface BorrowRepository extends JpaRepository<Borrow, Long> {
 
-    List<Borrow> findByStudentIdAndStatus(BorrowStatus status, Long studentId);
+    List<Borrow> findByStudentIdAndStatus(Long student_id, BorrowStatus status);
 
     @Query("SELECT b FROM Borrow b WHERE b.student.id = :studentId")
     List<Borrow> findAllByStudentId(@Param("studentId") Long studentId);

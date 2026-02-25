@@ -1,0 +1,23 @@
+### Liste tous les étudiants
+GET http://localhost:8080/api/students
+
+###
+
+GET http://localhost:8080/api/students?name=mamadou
+
+###
+
+GET http://localhost:8080/api/students/1
+
+###
+
+PUT http://localhost:8080/api/students/1
+Content-Type: application/json
+
+{
+  "firstName": "Mamadou",
+  "lastName": "Diallo Modifié"
+}
+###
+
+GET http://localhost:8080/api/students/999
